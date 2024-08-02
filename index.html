@@ -100,12 +100,13 @@
             border-radius: 3px;
             user-select: none;
             transition: background-color 0.3s;
+            z-index: 10; /* Zorg ervoor dat de knoppen boven andere elementen worden weergegeven */
         }
         .slideshow .prev {
-            left: 0;
+            left: 10px; /* Geef een kleine marge van de rand */
         }
         .slideshow .next {
-            right: 0;
+            right: 10px; /* Geef een kleine marge van de rand */
         }
         .slideshow .prev:hover, .slideshow .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
