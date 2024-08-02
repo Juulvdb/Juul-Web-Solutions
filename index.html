@@ -9,32 +9,33 @@
 
     <style>
         * {
+            box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
         }
         body {
-            margin: 0 auto;
+            margin: 0;
             background-image: url(/images/white-image.jpg);
-            scroll-behavior: smooth; /* Ensures smooth scrolling in supported browsers */
+            scroll-behavior: smooth;
         }
         nav {
             width: 100%;
             background-color: #fff;
+            border-bottom: 3px solid gray;
         }
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;            
-            border-bottom: 3px solid gray;
+            padding: 15px 20px; /* Adjusted padding for better mobile display */
         }
         .logo img {
-            height: 100px;
+            height: 80px; /* Adjusted for better mobile visibility */
         }
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 20px;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 16px;
         }
         .nav-links a {
             text-decoration: none;
@@ -46,12 +47,52 @@
             color: #007bff;
             border-bottom: #007bff solid 3px;
         }
+
+        /* Responsive Navigation Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .menu {
+            display: flex;
+        }
+        .menu.active {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                text-align: center;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #fff;
+                padding: 20px 0;
+                border-bottom: 3px solid gray;
+            }
+            .menu a {
+                font-size: 18px;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .menu.active {
+                display: flex;
+            }
+        }
+
         .slideshow {
-            width: 90%;
-            height: 674px; /* Default height */
-            max-width: 1200px; /* Maximum width for larger screens */
+            width: 100%;
+            max-width: 1200px;
+            height: 400px; /* Default height */
             position: relative;
-            margin: 40px auto;
+            margin: 20px auto;
             overflow: hidden;
             box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.4);
         }
@@ -91,8 +132,7 @@
             top: 50%;
             width: auto;
             height: auto;
-            padding: 16px;
-            margin-top: -22px;
+            padding: 10px;
             color: #fff;
             font-weight: bold;
             font-size: 24px;
@@ -102,61 +142,57 @@
             border-radius: 3px;
             user-select: none;
             transition: background-color 0.3s;
-            z-index: 10; /* Ensure buttons are above other elements */
+            z-index: 10;
         }
         .slideshow .prev {
-            left: 10px; /* Small margin from the edge */
+            left: 10px;
         }
         .slideshow .next {
-            right: 10px; /* Small margin from the edge */
+            right: 10px;
         }
         .slideshow .prev:hover, .slideshow .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+
         .intro-section {
-            padding: 50px 20%;
+            padding: 30px 10%;
             text-align: center;
             background-color: #fff;
         }
         .intro-section h1 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #007bff;
         }
         .intro-section h4 {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #666;
             line-height: 1.6;
             margin-bottom: 20px;
         }
+
         .ceo-section {
             text-align: center;
-            padding: 40px 0;
+            padding: 20px 10%;
             background-color: #fff;
         }
         .ceo-section img {
             border-radius: 50%;
-            height: 350px;
+            height: 250px; /* Adjusted size for smaller screens */
         }
         .ceo-section h6 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin: 10px 0;
             color: #333;
         }
         .ceo-section h5 {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #666;
         }
-        .section-title {
-            font-size: 2rem;
-            color: #007bff;
-            text-align: center;
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
+
         .footer {
             background-color: #333;
             color: #fff;
-            padding: 40px 0;
+            padding: 20px 0;
             margin-top: auto;
             text-align: center;
         }
@@ -166,7 +202,7 @@
             align-items: center;
         }
         .footer h3 {
-            font-size: 18px;
+            font-size: 16px;
             margin-bottom: 10px;
             color: #007bff;
         }
@@ -181,9 +217,9 @@
             text-decoration: underline;
         }
         .legal-info {
-            margin-top: 20px;
+            margin-top: 10px;
             border-top: 1px solid #444;
-            padding-top: 20px;
+            padding-top: 10px;
             width: 100%;
         }
         .footer-nav, .footer-nav ul {
@@ -205,48 +241,46 @@
             color: #007bff;
         }
 
-        /* Media Queries for responsiveness */
+        /* Media Queries for Responsiveness */
         @media (max-width: 1200px) {
             .slideshow {
-                height: 500px; /* Adjust height for smaller screens */
+                height: 300px; /* Adjust height for smaller screens */
             }
         }
-        
         @media (max-width: 992px) {
             .slideshow {
-                height: 400px; /* Adjust height for tablets */
+                height: 250px; /* Further adjust height for tablets */
             }
             .intro-section {
-                padding: 50px 10%;
+                padding: 30px 5%;
             }
         }
-
         @media (max-width: 768px) {
             .slideshow {
-                height: 300px; /* Adjust height for mobile phones */
-            }
-            .intro-section {
-                padding: 50px 5%;
-            }
-            .navbar {
-                flex-direction: column;
-                padding: 20px;
-            }
-            .nav-links {
-                flex-direction: column;
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .slideshow {
-                height: 200px; /* Further adjust height for very small screens */
+                height: 200px; /* Further adjust height for mobile phones */
             }
             .intro-section h1 {
                 font-size: 1.5rem;
             }
             .intro-section h4 {
-                font-size: 1rem;
+                font-size: 0.9rem;
+            }
+            .ceo-section img {
+                height: 200px; /* Adjust image size for smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .slideshow {
+                height: 150px; /* Further adjust height for very small screens */
+            }
+            .intro-section h1 {
+                font-size: 1.2rem;
+            }
+            .intro-section h4 {
+                font-size: 0.8rem;
+            }
+            .ceo-section img {
+                height: 150px; /* Further adjust image size for very small screens */
             }
         }
     </style>
@@ -254,12 +288,13 @@
 <body>
     <nav>
         <div class="navbar">
+            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
             <div class="logo">
                 <a href="https://juulwebsolutions.com/">
-                    <img src="/images/LogoZoomIn-removebg.png" height="100px" width="270px" />
+                    <img src="/images/LogoZoomIn-removebg.png" height="80px" width="270px" />
                 </a>
             </div>
-            <div class="nav-links">
+            <div class="menu">
                 <a href="">Coming Soon</a>
                 <a href="">Coming Soon</a>
                 <a href="">Coming Soon</a>
@@ -294,27 +329,70 @@
     </div>
     
     <section class="intro-section">
-        <h1>Welcome to Juul Web Solutions</h1>
-        <h4>Your partner for innovative web solutions and development.</h4>
+        <h1>WELKOM BIJ JUUL WEB SOLUTIONS</h1>
+        <h4>
+            Bij Juul Web Solutions helpen we kleine bedrijven hun online
+            aanwezigheid te versterken door het ontwerpen en ontwikkelen van
+            prachtige, functionele websites. Geleid door Juul Vandenbogaerde.
+        </h4>
+        <h1>ONZE DIENSTEN</h1>
+        <h4>
+            We bieden op maat gemaakte weboplossingen die passen bij de unieke
+            behoeften van uw bedrijf. Onze diensten omvatten webdesign,
+            webontwikkeling. We werken nauw samen met u om ervoor te zorgen dat uw
+            website niet alleen mooi is, maar ook effectief.
+        </h4>
+        <h1>ONZE EXPERTISE</h1>
+        <h4>
+            Met een bewezen staat van dienst in het leveren van hoogwaardige
+            weboplossingen aan kleine bedrijven, zijn we trots op onze creativiteit,
+            technische vaardigheid en klantgerichtheid. Ons team staat klaar om uw
+            bedrijf te ondersteunen met innovatieve ontwerpen
+            en de nieuwste technologieën.
+        </h4>
+        <h1>UW PARTNER IN GROEI</h1>
+        <h4>
+            Bij Juul Web Solutions geloven we in het opbouwen van langdurige
+            relaties en het leveren van meetbare resultaten. We begrijpen de unieke
+            uitdagingen waarmee kleine bedrijven worden geconfronteerd en zijn
+            vastbesloten om oplossingen te bieden die voldoen aan uw specifieke
+            behoeften.
+        </h4>
+        <h1>ONTDEK WAT WE VOOR U KUNNEN BETEKENEN</h1>
+        <h4>
+            Neem vandaag nog contact met ons op om te ontdekken hoe Juul Web
+            Solutions uw bedrijf kan helpen groeien. Samen kunnen we bouwen aan een
+            betere toekomst voor uw bedrijf.
+        </h4>
     </section>
     
     <section class="ceo-section">
-        <img src="/images/ceo-image.jpg" alt="CEO" />
-        <h6>John Doe</h6>
-        <h5>Founder & CEO</h5>
+        <h1>Oprichter & CEO</h1>
+        <img src="/images/fotoJV2.jpg" id="hoofdJV" height="250px" />
+        <h6>Juul Vandenbogaerde</h6>
+        <h5>Zaakvoerder <br> Web Programmer</h5>
     </section>
     
     <footer class="footer">
         <div class="container">
-            <h3>Juul Web Solutions</h3>
-            <p>&copy; 2024 Juul Web Solutions. All rights reserved.</p>
+            <h3>Contactgegevens</h3>
+            <p>Juul Web Solutions</p>
+            <p>Jan Jeliestraat 22</p>
+            <p>Aalst, Belgium</p>
+            <p>Tel: +32 468 06 71 04</p>
+            <p>Email: info.JuulWebSolutions@gmail.com</p>
+            <p>Rekeningnummer: BE28 7380 4169 0420</p>
             <div class="footer-nav">
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#" id="scrollToTop">Home</a></li>
+                    <li><a href="">Coming Soon</a></li>
+                    <li><a href="">Coming Soon</a></li>
+                    <li><a href="">Coming Soon</a></li>
                 </ul>
             </div>
+        </div>
+        <div class="legal-info">
+            <p>Privacybeleid | Algemene Voorwaarden | Auteursrecht © 2024 Juul Web Solutions</p>
         </div>
     </footer>
 
@@ -333,17 +411,34 @@
         function showSlides(n) {
             let slides = document.getElementsByClassName("slide");
             let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
             for (let i = 0; i < slides.length; i++) {
-                slides[i].style.opacity = "0";
+                slides[i].style.opacity = 0;
             }
             for (let i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
-            slides[slideIndex-1].style.opacity = "1";
-            dots[slideIndex-1].className += " active";
+            slides[slideIndex - 1].style.opacity = 1;
+            dots[slideIndex - 1].className += " active";
         }
+
+        function autoSlides() {
+            plusSlides(1);
+        }
+        setInterval(autoSlides, 4000);
+
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+
+        document.getElementById('scrollToTop').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>
