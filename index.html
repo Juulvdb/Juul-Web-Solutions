@@ -26,10 +26,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px; /* Adjusted padding for better mobile display */
+            padding: 15px 20px;
         }
         .logo img {
-            height: 80px; /* Adjusted for better mobile visibility */
+            height: 80px; /* Default size for larger screens */
         }
         .nav-links {
             display: flex;
@@ -63,21 +63,26 @@
             display: block;
         }
         @media (max-width: 768px) {
+            .logo img {
+                height: 60px; /* Reduced size for mobile screens */
+            }
             .menu {
                 display: none;
                 flex-direction: column;
                 gap: 10px;
                 width: 100%;
-                text-align: center;
+                text-align: left; /* Align menu items to the left */
                 position: absolute;
                 top: 60px;
                 left: 0;
                 background-color: #fff;
-                padding: 20px 0;
+                padding: 20px;
                 border-bottom: 3px solid gray;
             }
             .menu a {
                 font-size: 18px;
+                padding: 10px; /* Add padding for better touch targets */
+                display: block;
             }
             .menu-toggle {
                 display: block;
@@ -90,7 +95,7 @@
         .slideshow {
             width: 100%;
             max-width: 1200px;
-            height: 400px; /* Default height */
+            height: 400px;
             position: relative;
             margin: 20px auto;
             overflow: hidden;
@@ -177,7 +182,7 @@
         }
         .ceo-section img {
             border-radius: 50%;
-            height: 250px; /* Adjusted size for smaller screens */
+            height: 250px;
         }
         .ceo-section h6 {
             font-size: 1.2rem;
@@ -244,12 +249,12 @@
         /* Media Queries for Responsiveness */
         @media (max-width: 1200px) {
             .slideshow {
-                height: 300px; /* Adjust height for smaller screens */
+                height: 300px;
             }
         }
         @media (max-width: 992px) {
             .slideshow {
-                height: 250px; /* Further adjust height for tablets */
+                height: 250px;
             }
             .intro-section {
                 padding: 30px 5%;
@@ -257,7 +262,7 @@
         }
         @media (max-width: 768px) {
             .slideshow {
-                height: 200px; /* Further adjust height for mobile phones */
+                height: 200px;
             }
             .intro-section h1 {
                 font-size: 1.5rem;
@@ -266,12 +271,12 @@
                 font-size: 0.9rem;
             }
             .ceo-section img {
-                height: 200px; /* Adjust image size for smaller screens */
+                height: 200px;
             }
         }
         @media (max-width: 480px) {
             .slideshow {
-                height: 150px; /* Further adjust height for very small screens */
+                height: 150px;
             }
             .intro-section h1 {
                 font-size: 1.2rem;
@@ -280,7 +285,7 @@
                 font-size: 0.8rem;
             }
             .ceo-section img {
-                height: 150px; /* Further adjust image size for very small screens */
+                height: 150px;
             }
         }
     </style>
