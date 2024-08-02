@@ -48,10 +48,14 @@
             height: 674px;
             position: relative;
             margin: 40px auto;
-            overflow: hidden; /* Make sure overflow content is hidden */
+            overflow: hidden;
         }
         .slide {
-            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
         .slideshow img {
             width: 100%;
@@ -160,21 +164,6 @@
         </div>
     </nav>
 
-    <div class="slideshow">
-        <div class="slide">
-            <img src="/images/voorbeeldWEB1.png" alt="Slide 1" />
-        </div>
-        <div class="slide">
-            <img src="/images/voorbeeldWEB2.png" alt="Slide 2" />
-        </div>
-        <div class="slide">
-            <img src="/images/voorbeeldWEB3.png" alt="Slide 3" />
-        </div>
-        <div class="slide">
-            <img src="/images/voorbeeldWEB4.png" alt="Slide 4" />
-        </div>
-    </div>
-
     <div class="intro-section">
         <br /><br />
 
@@ -232,12 +221,28 @@
         <h5>Zaakvoerder <br> Web Programmer</h5>
     </div>
     <br /><br /><br />
+
+    <div class="slideshow">
+        <div class="slide">
+            <img src="/images/voorbeeldWEB1.png" alt="Slide 1" />
+        </div>
+        <div class="slide">
+            <img src="/images/voorbeeldWEB2.png" alt="Slide 2" />
+        </div>
+        <div class="slide">
+            <img src="/images/voorbeeldWEB3.png" alt="Slide 3" />
+        </div>
+        <div class="slide">
+            <img src="/images/voorbeeldWEB4.png" alt="Slide 4" />
+        </div>
+    </div>
+    
     <footer class="footer">
         <div class="container">
             <div class="contact-info">
                 <h3>Contactgegevens</h3>
                 <p>Juul Web Solutions</p>
-                <p>Jan Jaliestraat 22</p>
+                <p>Jan Jeliestraat 22</p>
                 <p>Aalst, Belgium</p>
                 <p>Tel: +32 468 06 71 04</p>
                 <p>Email: info.JuulWebSolutions@gmail.com</p>
@@ -247,9 +252,9 @@
                 <h3>Navigatie</h3>
                 <ul>
                     <li><a href="/html/JuulWebSolutions.html">Home</a></li>
-                    <li><a href="">Projecten</a></li>
-                    <li><a href="">Wat We Doen</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
                 </ul>
             </nav>
         </div>
@@ -264,13 +269,13 @@
         function showSlides() {
             let slides = document.getElementsByClassName("slide");
             for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+                slides[i].style.opacity = 0;
             }
             slideIndex++;
             if (slideIndex > slides.length) {
                 slideIndex = 1;
             }
-            slides[slideIndex - 1].style.display = "block";
+            slides[slideIndex - 1].style.opacity = 1;
             setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
     </script>
