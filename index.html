@@ -52,6 +52,7 @@
             margin: 40px auto;
             overflow: hidden;
             box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.4);
+            padding: 0 60px; /* Extra ruimte aan de zijkanten voor de knoppen */
         }
         .slide {
             position: absolute;
@@ -87,26 +88,27 @@
         .slideshow .prev, .slideshow .next {
             position: absolute;
             top: 50%;
-            width: auto;
-            height: auto;
-            padding: 16px;
-            margin-top: -22px;
+            width: 50px; /* Breedte van de cirkel */
+            height: 50px; /* Hoogte van de cirkel */
+            background-color: rgba(0, 0, 0, 0.5);
             color: #fff;
             font-weight: bold;
             font-size: 24px;
-            background-color: rgba(0, 0, 0, 0.5);
-            cursor: pointer;
             border: none;
-            border-radius: 3px;
+            border-radius: 50%; /* Maakt de knoppen cirkelvormig */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
             user-select: none;
+            z-index: 10;
             transition: background-color 0.3s;
-            z-index: 10; /* Zorg ervoor dat de knoppen boven andere elementen worden weergegeven */
         }
         .slideshow .prev {
-            left: 10px; /* Geef een kleine marge van de rand */
+            left: -30px; /* Pijl links buiten de container */
         }
         .slideshow .next {
-            right: 10px; /* Geef een kleine marge van de rand */
+            right: -30px; /* Pijl rechts buiten de container */
         }
         .slideshow .prev:hover, .slideshow .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
