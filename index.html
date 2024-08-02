@@ -14,6 +14,7 @@
         body {
             margin: 0 auto;
             background-image: url(/images/white-image.jpg);
+            scroll-behavior: smooth; /* Ensures smooth scrolling in supported browsers */
         }
         nav {
             width: 100%;
@@ -316,7 +317,7 @@
             <nav class="footer-nav">
                 <h3>Navigatie</h3>
                 <ul>
-                    <li><a href="https://juulwebsolutions.com/">Home</a></li>
+                    <li><a href="#" id="scrollToTop">Home</a></li>
                     <li><a href="">Coming Soon</a></li>
                     <li><a href="">Coming Soon</a></li>
                     <li><a href="">Coming Soon</a></li>
@@ -356,6 +357,15 @@
         setInterval(function() {
             plusSlides(1);
         }, 4000);
+
+        // Smooth scroll to top
+        document.getElementById('scrollToTop').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>
