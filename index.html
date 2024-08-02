@@ -48,7 +48,8 @@
         }
         .slideshow {
             width: 90%;
-            height: 674px;
+            height: 674px; /* Default height */
+            max-width: 1200px; /* Maximum width for larger screens */
             position: relative;
             margin: 40px auto;
             overflow: hidden;
@@ -101,13 +102,13 @@
             border-radius: 3px;
             user-select: none;
             transition: background-color 0.3s;
-            z-index: 10; /* Zorg ervoor dat de knoppen boven andere elementen worden weergegeven */
+            z-index: 10; /* Ensure buttons are above other elements */
         }
         .slideshow .prev {
-            left: 10px; /* Geef een kleine marge van de rand */
+            left: 10px; /* Small margin from the edge */
         }
         .slideshow .next {
-            right: 10px; /* Geef een kleine marge van de rand */
+            right: 10px; /* Small margin from the edge */
         }
         .slideshow .prev:hover, .slideshow .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
@@ -203,6 +204,51 @@
         .footer-nav li a:hover {
             color: #007bff;
         }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 1200px) {
+            .slideshow {
+                height: 500px; /* Adjust height for smaller screens */
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .slideshow {
+                height: 400px; /* Adjust height for tablets */
+            }
+            .intro-section {
+                padding: 50px 10%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slideshow {
+                height: 300px; /* Adjust height for mobile phones */
+            }
+            .intro-section {
+                padding: 50px 5%;
+            }
+            .navbar {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slideshow {
+                height: 200px; /* Further adjust height for very small screens */
+            }
+            .intro-section h1 {
+                font-size: 1.5rem;
+            }
+            .intro-section h4 {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -247,104 +293,34 @@
         </div>
     </div>
     
-    <div class="intro-section">
-        <br /><br />
-        <h1>WELKOM BIJ JUUL WEB SOLUTIONS</h1>
-        <hr />
-        <h4>
-            Bij Juul Web Solutions helpen we kleine bedrijven hun online
-            aanwezigheid te versterken door het ontwerpen en ontwikkelen van
-            prachtige, functionele websites. Geleid door Juul Vandenbogaerde.
-        </h4>
-        <h1>ONZE DIENSTEN</h1>
-        <hr />
-        <h4>
-            We bieden op maat gemaakte weboplossingen die passen bij de unieke
-            behoeften van uw bedrijf. Onze diensten omvatten webdesign,
-            webontwikkeling. We werken nauw samen met u om ervoor te zorgen dat uw
-            website niet alleen mooi is, maar ook effectief.
-        </h4>
-        <h1>ONZE EXPERTISE</h1>
-        <hr />
-        <h4>
-            Met een bewezen staat van dienst in het leveren van hoogwaardige
-            weboplossingen aan kleine bedrijven, zijn we trots op onze creativiteit,
-            technische vaardigheid en klantgerichtheid. Ons team staat klaar om uw
-            bedrijf te ondersteunen met innovatieve ontwerpen
-            en de nieuwste technologieën.
-        </h4>
-        <h1>UW PARTNER IN GROEI</h1>
-        <hr />
-        <h4>
-            Bij Juul Web Solutions geloven we in het opbouwen van langdurige
-            relaties en het leveren van meetbare resultaten. We begrijpen de unieke
-            uitdagingen waarmee kleine bedrijven worden geconfronteerd en zijn
-            vastbesloten om oplossingen te bieden die voldoen aan uw specifieke
-            behoeften.
-        </h4>
-        <h1>ONTDEK WAT WE VOOR U KUNNEN BETEKENEN</h1>
-        <hr />
-        <h4>
-            Neem vandaag nog contact met ons op om te ontdekken hoe Juul Web
-            Solutions uw bedrijf kan helpen groeien. Samen kunnen we bouwen aan een
-            betere toekomst voor uw bedrijf.
-        </h4>
-    </div>
+    <section class="intro-section">
+        <h1>Welcome to Juul Web Solutions</h1>
+        <h4>Your partner for innovative web solutions and development.</h4>
+    </section>
     
-    <br /><br /><br />
-    
-    <div class="ceo-section" align="center">
-        <h1>Oprichter & CEO</h1>
-        <img src="/images/fotoJV2.jpg" id="hoofdJV" height="400px" />
-        <br /><br />
-        <h6>Juul Vandenbogaerde</h6>
-        <h5>Zaakvoerder <br> Web Programmer</h5>
-    </div>
-    
-    <br /><br /><br />
+    <section class="ceo-section">
+        <img src="/images/ceo-image.jpg" alt="CEO" />
+        <h6>John Doe</h6>
+        <h5>Founder & CEO</h5>
+    </section>
     
     <footer class="footer">
         <div class="container">
-            <div class="contact-info">
-                <h3>Contactgegevens</h3>
-                <p>Juul Web Solutions</p>
-                <p>Jan Jeliestraat 22</p>
-                <p>Aalst, Belgium</p>
-                <p>Tel: +32 468 06 71 04</p>
-                <p>Email: info.JuulWebSolutions@gmail.com</p>
-                <p>Rekeningnummer: BE28 7380 4169 0420</p>
-            </div>
-            <nav class="footer-nav">
-                <h3>Navigatie</h3>
+            <h3>Juul Web Solutions</h3>
+            <p>&copy; 2024 Juul Web Solutions. All rights reserved.</p>
+            <div class="footer-nav">
                 <ul>
-                    <li><a href="#" id="scrollToTop">Home</a></li>
-                    <li><a href="">Coming Soon</a></li>
-                    <li><a href="">Coming Soon</a></li>
-                    <li><a href="">Coming Soon</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Contact Us</a></li>
                 </ul>
-            </nav>
-        </div>
-        <div class="legal-info">
-            <p>Privacybeleid | Algemene Voorwaarden | Auteursrecht © 2024 Juul Web Solutions</p>
+            </div>
         </div>
     </footer>
-    
+
     <script>
         let slideIndex = 1;
         showSlides(slideIndex);
-
-        function showSlides(n) {
-            let slides = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1; }
-            if (n < 1) { slideIndex = slides.length; }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.opacity = 0;
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.opacity = 1;
-            dots[slideIndex - 1].className += " active";
-        }
 
         function plusSlides(n) {
             showSlides(slideIndex += n);
@@ -354,18 +330,20 @@
             showSlides(slideIndex = n);
         }
 
-        setInterval(function() {
-            plusSlides(1);
-        }, 4000);
-
-        // Smooth scroll to top
-        document.getElementById('scrollToTop').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.opacity = "0";
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.opacity = "1";
+            dots[slideIndex-1].className += " active";
+        }
     </script>
 </body>
 </html>
