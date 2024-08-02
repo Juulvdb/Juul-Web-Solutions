@@ -18,6 +18,7 @@
         nav {
             width: 100%;
             background-color: #fff;
+            border-bottom: 3px solid gray; /* Blue border for navigation */
         }
         .navbar {
             display: flex;
@@ -37,11 +38,12 @@
         .nav-links a {
             text-decoration: none;
             color: #333;
-            transition: color 0.3s;
+            transition: color 0.3s, border-bottom 0.3s;
+            border-bottom: 3px solid transparent; /* Ensure border-bottom is present */
         }
         .nav-links a:hover {
             color: #007bff;
-            border-bottom: #007bff solid 3px;
+            border-bottom: #007bff solid 3px; /* Blue border on hover */
         }
         .slideshow {
             width: 90%;
@@ -114,6 +116,13 @@
             font-size: 1.2rem;
             color: #666;
         }
+        .section-title {
+            font-size: 2rem;
+            color: #007bff;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
         .footer {
             background-color: #333;
             color: #fff;
@@ -176,16 +185,15 @@
                 </a>
             </div>
             <div class="nav-links">
-                <a href="/html/projecten.html"></a>
-                <a href="/html/Wat_we_doen.html"></a>
-                <a href="/html/Contact.html"></a>
+                <a href="">Coming Soon</a>
+                <a href="">Coming Soon</a>
+                <a href="">Coming Soon</a>
             </div>
         </div>
     </nav>
 
     <div class="intro-section">
         <br /><br />
-
         <h1>WELKOM BIJ JUUL WEB SOLUTIONS</h1>
         <hr />
         <h4>
@@ -193,7 +201,6 @@
             aanwezigheid te versterken door het ontwerpen en ontwikkelen van
             prachtige, functionele websites. Geleid door Juul Vandenbogaerde.
         </h4>
-
         <h1>ONZE DIENSTEN</h1>
         <hr />
         <h4>
@@ -202,7 +209,6 @@
             webontwikkeling. We werken nauw samen met u om ervoor te zorgen dat uw
             website niet alleen mooi is, maar ook effectief.
         </h4>
-
         <h1>ONZE EXPERTISE</h1>
         <hr />
         <h4>
@@ -212,7 +218,6 @@
             bedrijf te ondersteunen met innovatieve ontwerpen
             en de nieuwste technologieën.
         </h4>
-
         <h1>UW PARTNER IN GROEI</h1>
         <hr />
         <h4>
@@ -222,7 +227,6 @@
             vastbesloten om oplossingen te bieden die voldoen aan uw specifieke
             behoeften.
         </h4>
-
         <h1>ONTDEK WAT WE VOOR U KUNNEN BETEKENEN</h1>
         <hr />
         <h4>
@@ -240,8 +244,8 @@
         <h5>Zaakvoerder <br> Web Programmer</h5>
     </div>
     <br /><br /><br />
-    <p></p>
-    <h1> Mijn al gemaakte projecten</h1>
+    <h1 class="section-title">Mijn al gemaakte projecten</h1>
+    <hr />
     <div class="slideshow">
         <div class="slide">
             <img src="/images/voorbeeldWEB1.png" alt="Slide 1" />
