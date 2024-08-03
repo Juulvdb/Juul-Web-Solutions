@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,22 +20,22 @@
         nav {
             width: 100%;
             background-color: #fff;
-            border-bottom: 3px solid gray;
         }
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 20px 50px;            
+            border-bottom: 3px solid gray;
         }
         .logo img {
-            height: 80px; /* Default size for larger screens */
+            height: 100px;
         }
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 40px;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 18px;
         }
         .nav-links a {
             text-decoration: none;
@@ -95,11 +93,11 @@
         }
 
         .slideshow {
-            width: 100%;
-            max-width: 1200px;
-            height: 400px;
+            width: 90%;
+            height: 674px; /* Default height */
+            max-width: 1200px; /* Maximum width for larger screens */
             position: relative;
-            margin: 20px auto;
+            margin: 40px auto;
             overflow: hidden;
             box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.4);
         }
@@ -139,7 +137,8 @@
             top: 50%;
             width: auto;
             height: auto;
-            padding: 10px;
+            padding: 16px;
+            margin-top: -22px;
             color: #fff;
             font-weight: bold;
             font-size: 24px;
@@ -149,13 +148,13 @@
             border-radius: 3px;
             user-select: none;
             transition: background-color 0.3s;
-            z-index: 10;
+            z-index: 10; /* Ensure buttons are above other elements */
         }
         .slideshow .prev {
-            left: 10px;
+            left: 10px; /* Small margin from the edge */
         }
         .slideshow .next {
-            right: 10px;
+            right: 10px; /* Small margin from the edge */
         }
         .slideshow .prev:hover, .slideshow .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
@@ -251,12 +250,12 @@
         /* Media Queries for Responsiveness */
         @media (max-width: 1200px) {
             .slideshow {
-                height: 300px;
+                height: 940px;
             }
         }
         @media (max-width: 992px) {
             .slideshow {
-                height: 250px;
+                height: 400px;
             }
             .intro-section {
                 padding: 30px 5%;
@@ -264,7 +263,7 @@
         }
         @media (max-width: 768px) {
             .slideshow {
-                height: 200px;
+                height: 300px;
             }
             .intro-section h1 {
                 font-size: 1.5rem;
@@ -273,7 +272,7 @@
                 font-size: 0.9rem;
             }
             .ceo-section img {
-                height: 200px;
+                height: 100px;
             }
         }
         @media (max-width: 480px) {
@@ -295,13 +294,12 @@
 <body>
     <nav>
         <div class="navbar">
-            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
             <div class="logo">
                 <a href="https://juulwebsolutions.com/">
-                    <img src="/images/LogoZoomIn-removebg.png" height="80px" width="270px" />
+                    <img src="/images/LogoZoomIn-removebg.png" height="100px" width="270px" />
                 </a>
             </div>
-            <div class="menu">
+            <div class="nav-links">
                 <a href="">Coming Soon</a>
                 <a href="">Coming Soon</a>
                 <a href="">Coming Soon</a>
