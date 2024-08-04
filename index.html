@@ -25,6 +25,8 @@
             background-color: #0044cc;
             padding: 10px 0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000; /* Ensure nav is on top */
         }
         .navbar {
             display: flex;
@@ -63,9 +65,8 @@
         }
         .menu {
             display: flex;
-        }
-        .menu.active {
-            display: block;
+            flex-direction: row;
+            align-items: center;
         }
         @media (max-width: 768px) {
             .navbar {
@@ -81,16 +82,23 @@
                 width: 100%;
                 text-align: left; /* Align menu items to the left */
                 position: absolute;
-                top: 90px;
+                top: 70px; /* Adjust this to connect with the blue navigation */
                 left: 0;
                 background-color: #0044cc;
-                padding: 20px;
-                border-bottom: 3px solid gray;
+                padding: 20px 0;
+                border-top: 3px solid gray;
+                z-index: 999; /* Ensure menu is above other content */
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 0;
             }
             .menu a {
                 font-size: 18px;
-                padding: 10px; /* Add padding for better touch targets */
+                padding: 10px 20px; /* Add padding for better touch targets */
                 display: block;
+                border-bottom: 1px solid #fff; /* Separate items visually */
             }
             .menu-toggle {
                 display: block;
