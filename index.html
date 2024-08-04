@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="icon" type="image/x-icon" href="/images/LogoZoomIn-removebg.png" />
     <title>Juul Web Solutions - Home</title>
 
@@ -18,6 +18,7 @@
             color: #333;
             scroll-behavior: smooth;
             position: relative;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         nav {
             width: 100%;
@@ -30,6 +31,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 50px;
+            max-width: 100%;
         }
         .logo img {
             height: 80px;
@@ -66,8 +68,11 @@
             display: block;
         }
         @media (max-width: 768px) {
+            .navbar {
+                padding: 0 20px; /* Adjust padding for mobile screens */
+            }
             .logo img {
-                height: 80px; /* Reduced size for mobile screens */
+                height: 60px; /* Reduced size for mobile screens */
             }
             .menu {
                 display: none;
@@ -213,6 +218,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            max-width: 100%;
+            padding: 0 20px;
         }
         .footer h3 {
             font-size: 18px;
@@ -257,12 +264,12 @@
         /* Media Queries for Responsiveness */
         @media (max-width: 1200px) {
             .slideshow {
-                height: 940px;
+                height: 400px; /* Adjust height for smaller screens */
             }
         }
         @media (max-width: 992px) {
             .slideshow {
-                height: 400px;
+                height: 350px; /* Adjust height for smaller screens */
             }
             .intro-section {
                 padding: 30px 5%;
@@ -270,7 +277,7 @@
         }
         @media (max-width: 768px) {
             .slideshow {
-                height: 300px;
+                height: 250px;
             }
             .intro-section h1 {
                 font-size: 1.5rem;
@@ -284,7 +291,7 @@
         }
         @media (max-width: 480px) {
             .slideshow {
-                height: 150px;
+                height: 200px;
             }
             .intro-section h1 {
                 font-size: 1.2rem;
@@ -293,10 +300,10 @@
                 font-size: 0.8rem;
             }
             .ceo-section img {
-                height: 150px;
+                height: 80px; /* Further reduce image size */
             }
         }
-        #Footer-numbers{
+        #Footer-numbers {
             color: #ffcc00;
         }
 
