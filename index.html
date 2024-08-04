@@ -295,6 +295,9 @@
                 height: 150px;
             }
         }
+        #Footer-numbers{
+            color: #ffcc00;
+        }
     </style>
 </head>
 <body>
@@ -395,9 +398,9 @@
             Juul Web Solutions
             <p>Jan Jeliestraat 22
             <br>Aalst, Belgium
-            <p>Tel: +32 468 06 71 04
-            <br>Email: info.JuulWebSolutions@gmail.com
-            <br>Rekeningnummer: BE28 7380 4169 0420
+            <p>Tel: <a id="Footer-numbers">+32 468 06 71 04 </a>
+            <br>Email: <a id="Footer-numbers">info.JuulWebSolutions@gmail.com</a> 
+            <br>Rekeningnummer: <a id="Footer-numbers">BE28 7380 4169 0420</a>
             <div class="footer-nav">
                 <ul>
                     <li><a href="#" id="scrollToTop">Home</a></li>
@@ -413,6 +416,7 @@
     </footer>
 
     <script>
+        // JavaScript for the slideshow
         let slideIndex = 1;
         showSlides(slideIndex);
 
@@ -425,35 +429,27 @@
         }
 
         function showSlides(n) {
+            let i;
             let slides = document.getElementsByClassName("slide");
             let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1; }
-            if (n < 1) { slideIndex = slides.length; }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.opacity = 0;
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.opacity = "0";
             }
-            for (let i = 0; i < dots.length; i++) {
+            for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
-            slides[slideIndex - 1].style.opacity = 1;
+            slides[slideIndex - 1].style.opacity = "1";
             dots[slideIndex - 1].className += " active";
         }
 
-        function autoSlides() {
-            plusSlides(1);
-        }
-        setInterval(autoSlides, 4000);
+        // JavaScript for the responsive navigation menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
 
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.menu').classList.toggle('active');
-        });
-
-        document.getElementById('scrollToTop').addEventListener('click', function(event) {
-            event.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
         });
     </script>
 </body>
