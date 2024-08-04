@@ -17,6 +17,7 @@
             background-color: #f5f5f5;
             color: #333;
             scroll-behavior: smooth;
+            position: relative;
         }
         nav {
             width: 100%;
@@ -298,6 +299,50 @@
         #Footer-numbers{
             color: #ffcc00;
         }
+
+        /* Language Selection Modal */
+        #languageModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .language-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        .language-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .language-content button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0044cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .language-content button:hover {
+            background-color: #ffcc00;
+        }
+
     </style>
 </head>
 <body id="scrollToTop">
@@ -320,7 +365,7 @@
     </nav>
 
     <div class="intro-section">
-        <h1>Mijn al gemaakte projecten</h1>
+        <h1 data-en="My Completed Projects" data-nl="Mijn al gemaakte projecten" data-fr="Mes Projets Réalisés">Mijn al gemaakte projecten</h1>
     </div>
     
 
@@ -348,37 +393,37 @@
     </div>
 
     <section class="intro-section">
-        <h1>WELKOM BIJ JUUL WEB SOLUTIONS</h1>
-        <h4>
+        <h1 data-en="Welcome to Juul Web Solutions" data-nl="WELKOM BIJ JUUL WEB SOLUTIONS" data-fr="Bienvenue chez Juul Web Solutions">WELKOM BIJ JUUL WEB SOLUTIONS</h1>
+        <h4 data-en="At Juul Web Solutions, we help small businesses strengthen their online presence by designing and developing beautiful, functional websites. Led by Juul Vandenbogaerde." data-nl="Bij Juul Web Solutions helpen we kleine bedrijven hun online aanwezigheid te versterken door het ontwerpen en ontwikkelen van prachtige, functionele websites. Geleid door Juul Vandenbogaerde." data-fr="Chez Juul Web Solutions, nous aidons les petites entreprises à renforcer leur présence en ligne en concevant et développant de beaux sites Web fonctionnels. Dirigé par Juul Vandenbogaerde.">
             Bij Juul Web Solutions helpen we kleine bedrijven hun online
             aanwezigheid te versterken door het ontwerpen en ontwikkelen van
             prachtige, functionele websites. Geleid door Juul Vandenbogaerde.
         </h4>
-        <h1>ONZE DIENSTEN</h1>
-        <h4>
+        <h1 data-en="OUR SERVICES" data-nl="ONZE DIENSTEN" data-fr="NOS SERVICES">ONZE DIENSTEN</h1>
+        <h4 data-en="We offer tailored web solutions that fit the unique needs of your business. Our services include web design and web development. We work closely with you to ensure that your website is not only beautiful but also effective." data-nl="We bieden op maat gemaakte weboplossingen die passen bij de unieke behoeften van uw bedrijf. Onze diensten omvatten webdesign, webontwikkeling. We werken nauw samen met u om ervoor te zorgen dat uw website niet alleen mooi is, maar ook effectief." data-fr="Nous offrons des solutions Web sur mesure qui répondent aux besoins uniques de votre entreprise. Nos services incluent la conception de sites Web, le développement Web. Nous travaillons en étroite collaboration avec vous pour vous assurer que votre site Web est non seulement beau, mais aussi efficace.">
             We bieden op maat gemaakte weboplossingen die passen bij de unieke
             behoeften van uw bedrijf. Onze diensten omvatten webdesign,
             webontwikkeling. We werken nauw samen met u om ervoor te zorgen dat uw
             website niet alleen mooi is, maar ook effectief.
         </h4>
-        <h1>ONZE EXPERTISE</h1>
-        <h4>
+        <h1 data-en="OUR EXPERTISE" data-nl="ONZE EXPERTISE" data-fr="NOTRE EXPERTISE">ONZE EXPERTISE</h1>
+        <h4 data-en="With a proven track record of delivering high-quality web solutions to small businesses, we pride ourselves on our creativity, technical skill, and client focus. Our team is ready to support your business with innovative designs and the latest technologies." data-nl="Met een bewezen staat van dienst in het leveren van hoogwaardige weboplossingen aan kleine bedrijven, zijn we trots op onze creativiteit, technische vaardigheid en klantgerichtheid. Ons team staat klaar om uw bedrijf te ondersteunen met innovatieve ontwerpen en de nieuwste technologieën." data-fr="Avec un bilan éprouvé de la fourniture de solutions Web de haute qualité aux petites entreprises, nous sommes fiers de notre créativité, de nos compétences techniques et de notre orientation client. Notre équipe est prête à soutenir votre entreprise avec des conceptions innovantes et les dernières technologies.">
             Met een bewezen staat van dienst in het leveren van hoogwaardige
             weboplossingen aan kleine bedrijven, zijn we trots op onze creativiteit,
             technische vaardigheid en klantgerichtheid. Ons team staat klaar om uw
             bedrijf te ondersteunen met innovatieve ontwerpen
             en de nieuwste technologieën.
         </h4>
-        <h1>UW PARTNER IN GROEI</h1>
-        <h4>
+        <h1 data-en="YOUR PARTNER IN GROWTH" data-nl="UW PARTNER IN GROEI" data-fr="VOTRE PARTENAIRE EN CROISSANCE">UW PARTNER IN GROEI</h1>
+        <h4 data-en="At Juul Web Solutions, we believe in building long-term relationships and delivering measurable results. We understand the unique challenges that small businesses face and are committed to providing solutions that meet your specific needs." data-nl="Bij Juul Web Solutions geloven we in het opbouwen van langdurige relaties en het leveren van meetbare resultaten. We begrijpen de unieke uitdagingen waarmee kleine bedrijven worden geconfronteerd en zijn vastbesloten om oplossingen te bieden die voldoen aan uw specifieke behoeften." data-fr="Chez Juul Web Solutions, nous croyons en l'établissement de relations à long terme et en la fourniture de résultats mesurables. Nous comprenons les défis uniques auxquels sont confrontées les petites entreprises et nous nous engageons à fournir des solutions qui répondent à vos besoins spécifiques.">
             Bij Juul Web Solutions geloven we in het opbouwen van langdurige
             relaties en het leveren van meetbare resultaten. We begrijpen de unieke
             uitdagingen waarmee kleine bedrijven worden geconfronteerd en zijn
             vastbesloten om oplossingen te bieden die voldoen aan uw specifieke
             behoeften.
         </h4>
-        <h1>ONTDEK WAT WE VOOR U KUNNEN BETEKENEN</h1>
-        <h4>
+        <h1 data-en="DISCOVER WHAT WE CAN DO FOR YOU" data-nl="ONTDEK WAT WE VOOR U KUNNEN BETEKENEN" data-fr="DÉCOUVREZ CE QUE NOUS POUVONS FAIRE POUR VOUS">ONTDEK WAT WE VOOR U KUNNEN BETEKENEN</h1>
+        <h4 data-en="Contact us today to discover how Juul Web Solutions can help your business grow. Together we can build a better future for your company." data-nl="Neem vandaag nog contact met ons op om te ontdekken hoe Juul Web Solutions uw bedrijf kan helpen groeien. Samen kunnen we bouwen aan een betere toekomst voor uw bedrijf." data-fr="Contactez-nous dès aujourd'hui pour découvrir comment Juul Web Solutions peut aider votre entreprise à se développer. Ensemble, nous pouvons construire un avenir meilleur pour votre entreprise.">
             Neem vandaag nog contact met ons op om te ontdekken hoe Juul Web
             Solutions uw bedrijf kan helpen groeien. Samen kunnen we bouwen aan een
             betere toekomst voor uw bedrijf.
@@ -386,15 +431,15 @@
     </section>
 
     <section class="ceo-section">
-        <h1>Oprichter & CEO</h1>
+        <h1 data-en="Founder & CEO" data-nl="Oprichter & CEO" data-fr="Fondateur & PDG">Oprichter & CEO</h1>
         <img src="/images/fotoJV2.jpg" alt="Juul Vandenbogaerde" />
-        <h6>Juul Vandenbogaerde</h6>
-        <h5>Zaakvoerder <br> Web Programmer</h5>
+        <h6 data-en="Juul Vandenbogaerde" data-nl="Juul Vandenbogaerde" data-fr="Juul Vandenbogaerde">Juul Vandenbogaerde</h6>
+        <h5 data-en="CEO <br> Web Programmer" data-nl="Zaakvoerder <br> Web Programmer" data-fr="PDG <br> Développeur Web">Zaakvoerder <br> Web Programmer</h5>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <h3>Contactgegevens</h3>
+            <h3 data-en="Contact Details" data-nl="Contactgegevens" data-fr="Coordonnées">Contactgegevens</h3>
             Juul Web Solutions
             <p>Jan Jeliestraat 22
             <br>Aalst, Belgium
@@ -414,6 +459,16 @@
             <p>Privacybeleid | Algemene Voorwaarden | Auteursrecht © 2024 Juul Web Solutions</p>
         </div>
     </footer>
+
+    <!-- Language Selection Modal -->
+    <div id="languageModal">
+        <div class="language-content">
+            <h2>Select a Language</h2>
+            <button onclick="selectLanguage('en')">English</button>
+            <button onclick="selectLanguage('nl')">Dutch</button>
+            <button onclick="selectLanguage('fr')">French</button>
+        </div>
+    </div>
 
     <script>
         // JavaScript for the slideshow
@@ -462,6 +517,24 @@
                 behavior: 'smooth' // Smooth scroll to top
             });
         });
+
+        // Language selection functionality
+        function selectLanguage(lang) {
+            // Hide the language modal
+            document.getElementById('languageModal').style.display = 'none';
+
+            // Translate the content based on selected language
+            const translatableElements = document.querySelectorAll('[data-en]');
+
+            translatableElements.forEach(element => {
+                element.textContent = element.getAttribute(`data-${lang}`);
+            });
+        }
+
+        // Show the language modal on page load
+        window.onload = function() {
+            document.getElementById('languageModal').style.display = 'flex';
+        };
     </script>
 </body>
 </html>
