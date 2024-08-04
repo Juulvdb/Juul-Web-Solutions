@@ -10,42 +10,43 @@
     <style>
         * {
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
         body {
             margin: 0;
-            background-image: url(/images/white-image.jpg);
+            background-color: #f5f5f5;
+            color: #333;
             scroll-behavior: smooth;
         }
         nav {
             width: 100%;
-            background-color: #fff;
+            background-color: #0044cc;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;            
-            border-bottom: 3px solid gray;
+            padding: 0 50px;
         }
         .logo img {
-            height: 100px;
+            height: 80px;
         }
         .nav-links {
             display: flex;
-            gap: 40px;
-            font-weight: bold;
+            gap: 20px;
             font-size: 18px;
         }
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: #fff;
             transition: color 0.3s, border-bottom 0.3s;
             border-bottom: 3px solid transparent;
         }
         .nav-links a:hover {
-            color: #007bff;
-            border-bottom: #007bff solid 3px;
+            color: #ffcc00;
+            border-bottom: #ffcc00 solid 3px;
         }
 
         /* Responsive Navigation Menu */
@@ -55,6 +56,7 @@
             background: none;
             border: none;
             cursor: pointer;
+            color: #fff;
         }
         .menu {
             display: flex;
@@ -94,12 +96,12 @@
 
         .slideshow {
             width: 90%;
-            height: 674px; /* Default height */
-            max-width: 1200px; /* Maximum width for larger screens */
+            height: 600px;
+            max-width: 1200px;
             position: relative;
             margin: 40px auto;
             overflow: hidden;
-            box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.4);            
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
         }
         .slide {
@@ -131,7 +133,7 @@
             transition: background-color 0.3s;
         }
         .dot.active {
-            background-color: #007bff;
+            background-color: #ffcc00;
         }
         .slideshow .prev, .slideshow .next {
             position: absolute;
@@ -149,58 +151,61 @@
             border-radius: 3px;
             user-select: none;
             transition: background-color 0.3s;
-            z-index: 10; /* Ensure buttons are above other elements */
+            z-index: 10;
         }
         .slideshow .prev {
-            left: 10px; /* Small margin from the edge */
+            left: 10px;
         }
         .slideshow .next {
-            right: 10px; /* Small margin from the edge */
+            right: 10px;
         }
         .slideshow .prev:hover, .slideshow .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
 
         .intro-section {
-            padding: 30px 10%;
+            padding: 60px 10%;
             text-align: center;
             background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
         }
         .intro-section h1 {
-            font-size: 1.8rem;
-            color: #007bff;
+            font-size: 2.2rem;
+            color: #0044cc;
+            margin-bottom: 20px;
         }
         .intro-section h4 {
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: #666;
-            line-height: 1.6;
+            line-height: 1.8;
             margin-bottom: 20px;
         }
 
         .ceo-section {
             text-align: center;
-            padding: 20px 10%;
+            padding: 40px 10%;
             background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .ceo-section img {
             border-radius: 50%;
-            height: 250px;
+            height: 150px;
         }
         .ceo-section h6 {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin: 10px 0;
             color: #333;
         }
         .ceo-section h5 {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #666;
         }
 
         .footer {
             background-color: #333;
             color: #fff;
-            padding: 20px 0;
-            margin-top: auto;
+            padding: 40px 0;
             text-align: center;
         }
         .footer .container {
@@ -209,24 +214,24 @@
             align-items: center;
         }
         .footer h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: #007bff;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ffcc00;
         }
         .footer p, .footer a {
             color: #fff;
         }
         .footer a {
             text-decoration: none;
-            color: #fff;
+            color: #ffcc00;
         }
         .footer a:hover {
             text-decoration: underline;
         }
         .legal-info {
-            margin-top: 10px;
+            margin-top: 20px;
             border-top: 1px solid #444;
-            padding-top: 10px;
+            padding-top: 20px;
             width: 100%;
         }
         .footer-nav, .footer-nav ul {
@@ -245,7 +250,7 @@
             margin: 5px 0;
         }
         .footer-nav li a:hover {
-            color: #007bff;
+            color: #ffcc00;
         }
 
         /* Media Queries for Responsiveness */
@@ -297,25 +302,25 @@
         <div class="navbar">
             <div class="logo">
                 <a href="https://juulwebsolutions.com/">
-                    <img src="/images/LogoZoomIn-removebg.png" height="100px" width="270px" />
+                    <img src="/images/Logo-White-removebg.png" alt="Juul Web Solutions Logo" />
                 </a>
             </div>
             <button class="menu-toggle">☰</button>
             <div class="menu">
                 <div class="nav-links">
-                    <a href="">Coming Soon</a>
-                    <a href="">Coming Soon</a>
-                    <a href="">Coming Soon</a>
+                    <a href="#">Coming Soon</a>
+                    <a href="#">Coming Soon</a>
+                    <a href="#">Coming Soon</a>
                 </div>
             </div>
         </div>
     </nav>
-    
+
     <div class="intro-section">
         <h1>Mijn al gemaakte projecten</h1>
     </div>
-    <hr />
     
+
     <div class="slideshow">
         <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
         <div class="slide">
@@ -338,7 +343,7 @@
             <span class="dot" onclick="currentSlide(4)"></span>
         </div>
     </div>
-    
+
     <section class="intro-section">
         <h1>WELKOM BIJ JUUL WEB SOLUTIONS</h1>
         <h4>
@@ -376,14 +381,14 @@
             betere toekomst voor uw bedrijf.
         </h4>
     </section>
-    
+
     <section class="ceo-section">
         <h1>Oprichter & CEO</h1>
-        <img src="/images/fotoJV2.jpg" id="hoofdJV" height="250px" />
+        <img src="/images/fotoJV2.jpg" alt="Juul Vandenbogaerde" />
         <h6>Juul Vandenbogaerde</h6>
         <h5>Zaakvoerder <br> Web Programmer</h5>
     </section>
-    
+
     <footer class="footer">
         <div class="container">
             <h3>Contactgegevens</h3>
@@ -396,9 +401,9 @@
             <div class="footer-nav">
                 <ul>
                     <li><a href="#" id="scrollToTop">Home</a></li>
-                    <li><a href="">Coming Soon</a></li>
-                    <li><a href="">Coming Soon</a></li>
-                    <li><a href="">Coming Soon</a></li>
+                    <li><a href="#">Coming Soon</a></li>
+                    <li><a href="#">Coming Soon</a></li>
+                    <li><a href="#">Coming Soon</a></li>
                 </ul>
             </div>
         </div>
