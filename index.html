@@ -448,7 +448,7 @@
         <h1 data-en="Founder & CEO" data-nl="Oprichter & CEO" data-fr="Fondateur & PDG">Oprichter & CEO</h1>
         <img src="/images/fotoJV2.jpg" alt="Juul Vandenbogaerde" />
         <h6 data-en="Juul Vandenbogaerde" data-nl="Juul Vandenbogaerde" data-fr="Juul Vandenbogaerde">Juul Vandenbogaerde</h6>
-        <h5 data-en="CEO Web Programmer" data-nl="Zaakvoerder Web Programmer" data-fr="PDG Développeur Web">Zaakvoerder <br> Web Programmer</h5>
+        <h5 data-en="CEO <br> Web Programmer" data-nl="Zaakvoerder <br> Web Programmeur" data-fr="PDG <br> Développeur Web">Zaakvoerder <br> Web Programmer</h5>
     </section>
 
     <footer class="footer">
@@ -541,7 +541,7 @@
             const translatableElements = document.querySelectorAll('[data-en]');
 
             translatableElements.forEach(element => {
-                element.textContent = element.getAttribute(`data-${lang}`);
+                element.innerHTML = element.getAttribute(`data-${lang}`); // Use innerHTML to support <br>
             });
         }
 
