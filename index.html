@@ -70,10 +70,21 @@
         }
         @media (max-width: 768px) {
             .navbar {
+                justify-content: center; /* Center the logo in mobile view */
                 padding: 0 20px; /* Adjust padding for mobile screens */
+            }
+            .logo {
+                margin: 0 auto; /* Center logo */
             }
             .logo img {
                 height: 60px; /* Reduced size for mobile screens */
+            }
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 20px; /* Align menu button to the right */
+                top: 50%;
+                transform: translateY(-50%);
             }
             .menu {
                 display: none;
@@ -99,9 +110,6 @@
                 padding: 10px 20px; /* Add padding for better touch targets */
                 display: block;
                 border-bottom: 1px solid #fff; /* Separate items visually */
-            }
-            .menu-toggle {
-                display: block;
             }
             .menu.active {
                 display: flex;
